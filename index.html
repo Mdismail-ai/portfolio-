@@ -1,14 +1,84 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mohammed Ismail | Portfolio</title>
-    <link rel="stylesheet" href="css/styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Mohammed Ismail - Full Stack Developer & Master's Candidate"/>
+  <title>Mohammed Ismail | Software Engineer</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
-    <!-- User's original content goes here -->
+  <header>
+    <nav class="nav-container" aria-label="Main Navigation">
+      <h1>Mohammed Ismail</h1>
+      <div class="nav-links">
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Transforming Ideas Into Digital Reality</h1>
+      <p>Full-Stack Developer | Java Specialist | Cloud Enthusiast</p>
+    </div>
+  </section>
+
+  <section id="skills">
+    <h2>Technical Arsenal</h2>
+    <div class="skills-grid">
+      <div class="skill-card"><h3>Backend Development</h3><p>Java, Python, Node.js</p></div>
+      <div class="skill-card"><h3>Frontend Development</h3><p>JavaScript, HTML5, CSS3</p></div>
+      <div class="skill-card"><h3>Database Management</h3><p>MySQL, MongoDB</p></div>
+      <div class="skill-card"><h3>C Programming</h3><p>Memory Management, Problem Solving</p></div>
+      <div class="skill-card"><h3>Data Structures & Algorithms</h3><p>Efficient Code Design, Logic Building</p></div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <h2>Signature Projects</h2>
+    <div class="project-showcase">
+      <div class="project-item">
+        <img src="project1.jpg" alt="AI Analytics Platform" />
+        <h3>AI-Powered Analytics Platform</h3>
+        <p>Java, Python, TensorFlow</p>
+        <a href="#" class="btn">Case Study →</a>
+      </div>
+      <div class="project-item">
+        <img src="ecommerce.jpg" alt="E-commerce Website" />
+        <h3>E-commerce Website</h3>
+        <p>End-to-end online shopping system with secure payments. Paid access only.</p>
+        <a href="#" class="btn">Access (Paid) →</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Let's Connect</h2>
+    <div class="contact-form">
+      <form>
+        <input type="text" placeholder="Name" required />
+        <input type="email" placeholder="Email" required />
+        <textarea placeholder="Message" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+      <div class="social-links">
+        <a href="https://linkedin.com/in/md-ismail-139b2724b"><i class="fab fa-linkedin"></i></a>
+        <a href="https://github.com/Mdismail-ai"><i class="fab fa-github"></i></a>
+        <a href="mailto:mdismail99059331075@gmail.com"><i class="fas fa-envelope"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; <span id="current-year"></span> Mohammed Ismail. All rights reserved.</p>
+  </footer>
+
+  <div class="theme-toggle"><i class="fas fa-moon"></i></div>
+
+  <script src="script.js"></script>
 </body>
-<script src="js/script.js"></script>
 </html>

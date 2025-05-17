@@ -1,9 +1,8 @@
 :root {
-  --primary: #0a192f;
-  --secondary: #112240;
-  --accent: #64ffda;
-  --dark: #ffffff;
-  --light: #e6f1ff;
+  --background: #0d0d0d;
+  --foreground: #ffffff;
+  --accent: #ffffff;
+  --muted: #aaaaaa;
 }
 
 * {
@@ -14,20 +13,18 @@
 }
 
 body {
-  background: var(--light);
-  color: var(--primary);
-  overflow-x: hidden;
-  line-height: 1.6;
+  background-color: var(--background);
+  color: var(--foreground);
 }
 
 header {
-  background: rgba(10, 25, 47, 0.95);
+  background: #000;
   padding: 1.5rem 0;
   position: fixed;
   top: 0;
   width: 100%;
   z-index: 1000;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid #222;
 }
 
 .nav-container {
@@ -40,36 +37,20 @@ header {
 }
 
 .nav-container h1 {
-  font-size: 1.8rem;
   color: var(--accent);
+  font-size: 1.8rem;
   font-weight: bold;
 }
 
-.nav-links {
-  display: flex;
-  gap: 2rem;
-}
-
 .nav-links a {
-  color: white;
-  font-weight: 500;
+  color: var(--muted);
   text-decoration: none;
-  position: relative;
+  margin-left: 2rem;
+  transition: color 0.3s;
 }
 
-.nav-links a::after {
-  content: '';
-  position: absolute;
-  height: 2px;
-  width: 0;
-  background: var(--accent);
-  left: 0;
-  bottom: -5px;
-  transition: 0.3s;
-}
-
-.nav-links a:hover::after {
-  width: 100%;
+.nav-links a:hover {
+  color: var(--foreground);
 }
 
 .hero {
@@ -77,55 +58,33 @@ header {
   min-height: calc(100vh - 90px);
   display: flex;
   align-items: center;
+  justify-content: center;
   padding: 4rem 2rem;
-  background: linear-gradient(120deg, var(--primary), var(--secondary));
-  color: white;
-  position: relative;
-}
-
-.hero-content {
-  max-width: 900px;
-  margin: auto;
   text-align: center;
-  z-index: 2;
 }
 
-.hero-content h1 {
-  font-size: 3.5rem;
-  animation: slideIn 1s ease-out;
+.hero h1 {
+  font-size: 3rem;
+  color: var(--foreground);
 }
 
-.hero-content p {
-  font-size: 1.4rem;
+.hero p {
+  font-size: 1.2rem;
+  color: var(--muted);
   margin-top: 1rem;
-  animation: fadeIn 2s ease-out;
-}
-
-@keyframes slideIn {
-  from { opacity: 0; transform: translateX(-100px); }
-  to { opacity: 1; transform: translateX(0); }
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(30px); }
-  to { opacity: 1; transform: translateY(0); }
 }
 
 section {
-  max-width: 1200px;
+  max-width: 1100px;
   margin: auto;
   padding: 4rem 2rem;
 }
 
 h2 {
-  font-size: 2.2rem;
-  color: var(--primary);
-  margin-bottom: 2rem;
   text-align: center;
-}
-
-h3 {
-  color: var(--secondary);
+  font-size: 2rem;
+  color: var(--foreground);
+  margin-bottom: 2rem;
 }
 
 .skills-grid, .project-showcase {
@@ -135,118 +94,96 @@ h3 {
 }
 
 .skill-card, .project-item {
-  background: #ffffff;
-  border-radius: 15px;
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
-  padding: 2rem;
-  text-align: center;
-  transition: transform 0.3s;
+  background: #111;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #000;
 }
 
-.skill-card:hover, .project-item:hover {
-  transform: translateY(-10px);
+.skill-card h3, .project-item h3 {
+  color: var(--foreground);
+  margin-bottom: 0.5rem;
+}
+
+.skill-card p, .project-item p {
+  color: var(--muted);
 }
 
 .project-item img {
   width: 100%;
   height: 200px;
   object-fit: cover;
-  border-radius: 10px;
+  border-radius: 8px;
   margin-bottom: 1rem;
 }
 
 .btn {
   display: inline-block;
-  background: var(--accent);
-  color: var(--primary);
-  padding: 0.7rem 1.2rem;
-  border-radius: 8px;
   margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--foreground);
+  color: var(--foreground);
   text-decoration: none;
-  font-weight: 600;
-  transition: background 0.3s;
+  border-radius: 5px;
+  transition: 0.3s;
 }
 
 .btn:hover {
-  background: #52e0c4;
+  background: var(--foreground);
+  color: var(--background);
 }
 
 .contact-form {
-  background: white;
+  background: #111;
   padding: 2rem;
-  border-radius: 15px;
-  box-shadow: 0 5px 30px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
 }
 
-.contact-form input, .contact-form textarea {
+.contact-form input,
+.contact-form textarea {
   width: 100%;
   padding: 1rem;
   margin: 0.5rem 0;
-  border-radius: 10px;
-  border: 1px solid #ccc;
+  background: #000;
+  color: white;
+  border: 1px solid #333;
+  border-radius: 5px;
 }
 
 .contact-form button {
-  background: var(--secondary);
-  color: white;
+  background: var(--foreground);
+  color: var(--background);
+  padding: 0.7rem 1.5rem;
   border: none;
-  padding: 0.8rem 1.5rem;
-  border-radius: 8px;
+  border-radius: 5px;
   cursor: pointer;
 }
 
 .social-links {
-  margin-top: 1rem;
   text-align: center;
+  margin-top: 1rem;
 }
 
 .social-links a {
+  color: var(--muted);
   margin: 0 0.5rem;
   font-size: 1.5rem;
-  color: var(--primary);
-  transition: color 0.3s;
 }
 
 .social-links a:hover {
-  color: var(--accent);
+  color: var(--foreground);
 }
 
 footer {
   text-align: center;
   padding: 2rem;
+  color: var(--muted);
   font-size: 0.9rem;
-  color: #666;
-}
-
-.theme-toggle {
-  position: fixed;
-  bottom: 2rem;
-  right: 2rem;
-  background: var(--accent);
-  color: white;
-  padding: 1rem;
-  border-radius: 50%;
-  cursor: pointer;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-  z-index: 1000;
-}
-
-.dark-theme {
-  --primary: #e6f1ff;
-  --secondary: #233554;
-  --accent: #64ffda;
-  --dark: #ffffff;
-  --light: #0a192f;
-  background: var(--light);
-  color: var(--dark);
 }
 
 @media (max-width: 768px) {
-  .hero-content h1 {
-    font-size: 2rem;
-  }
-
   .nav-links {
     display: none;
   }
 }
+
